@@ -1,0 +1,3 @@
+- Pokemon löschen können
+- Pokemon Updaten können
+- Userinterface schöner gestalten
