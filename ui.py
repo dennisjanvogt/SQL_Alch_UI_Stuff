@@ -16,20 +16,22 @@ def speichern():
     tabelle.rows = [{"name": p.name, "typ": p.typ, "level": p.level} for p in pokis]
 
 
-with ui.tabs().classes("w-full") as tabs:
-    one = ui.tab("Speichern")
-    two = ui.tab("Laden")
-with ui.tab_panels(tabs, value=one):
-    with ui.tab_panel(one):
+with ui.row():
+    with ui.card():
         input_name = ui.input(label="Name")
         input_typ = ui.input(label="Typ")
         input_level = ui.input(label="Level")
         ui.button(icon="save", text="Speichern", on_click=lambda: speichern())
-    with ui.tab_panel(two):
+
+    with ui.card():
         pokis = Pokemon.get_all_poki()
         tabelle = ui.table(
-            rows=[{"name": p.name, "typ": p.typ, "level": p.level} for p in pokis]
+            rows=[
+                {
+                    "name": p.name,
+                    "typ": p.typ,
+                    "level": p.level,
+                }
+                for p in pokis
+            ]
         )
-
-
-ui.run()

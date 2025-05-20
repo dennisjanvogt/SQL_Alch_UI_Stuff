@@ -1,8 +1,7 @@
 from sqlalchemy.orm import DeclarativeBase, Mapped, mapped_column
 from sqlalchemy import create_engine, String, Integer
 
-
-engine = create_engine("sqlite:///pokemon.db", echo=True)
+engine = create_engine("sqlite:///pokemon.db", echo=False)
 
 
 class Base(DeclarativeBase):
